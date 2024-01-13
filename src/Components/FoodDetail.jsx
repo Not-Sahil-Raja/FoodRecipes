@@ -12,9 +12,8 @@ const FoodDetail = ({ foodId }) => {
       const data = await res.json();
       setFood(data);
       setLoading(false);
-
-      foodInfo();
     }
+    foodInfo();
   }, [foodId]);
   console.log(food.extendedIngredients);
   return (
@@ -87,7 +86,7 @@ const FoodDetail = ({ foodId }) => {
                     stp.image
                   }
                   alt=""
-                  className=" w-8 rounded object-cover aspect-auto p-1"
+                  className=" w-8 rounded object-cover aspect-auto"
                 />
                 <span>{stp.original}</span>
               </li>
