@@ -7,14 +7,13 @@ const FoodDetail = ({ foodId }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!food.title) {
-      foodInfo();
-    }
     async function foodInfo() {
       const res = await fetch(`${URL}?apiKey=${apiKey}`);
       const data = await res.json();
       setFood(data);
       setLoading(false);
+
+      foodInfo();
     }
   }, [foodId]);
   console.log(food.extendedIngredients);
